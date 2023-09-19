@@ -7,12 +7,11 @@ const MenuPosts = ({ withImage }: { withImage: boolean }) => {
   return (
     <div className={styles.items}>
       <Link href="/" className={styles.item}>
-        <div className={styles.imageContainer}>
-          {withImage && (
+        {withImage && (
+          <div className={styles.imageContainer}>
             <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-          )}
-        </div>
-
+          </div>
+        )}
         <div className={styles.textContainer}>
           <span className={`${styles.category} ${styles.travel}`}>Travel</span>
           <h3 className={styles.postTitle}>
