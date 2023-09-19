@@ -4,6 +4,7 @@ import styles from "./authLinks.module.css";
 import { useState } from "react";
 
 const AuthLinks = () => {
+  const status = "unauthenticated";
   return (
     <>
       {status === "unauthenticated" ? (
