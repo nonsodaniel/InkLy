@@ -14,8 +14,6 @@ const ThemeProvider = ({ children }: IThemeProviderProps) => {
     setMounted(true);
   }, []);
 
-  console.log({ provider: theme });
-
   if (mounted) {
     return <div className={theme}>{children}</div>;
   }
