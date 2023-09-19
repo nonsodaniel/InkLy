@@ -3,11 +3,18 @@ import Link from "next/link";
 import styles from "./authLinks.module.css";
 import { useState } from "react";
 
+enum AuthState {
+  AUTHENTICATED = "authenticated",
+  UNAUTHENTICATED = "unauthenticated",
+}
+
 const AuthLinks = () => {
-  const status = "unauthenticated";
+  const [open, setOpen] = useState(false);
+  const status = AuthState.AUTHENTICATED || AuthState.UNAUTHENTICATED;
+
   return (
     <>
-      {status === "unauthenticated" ? (
+      {status === AuthState.AUTHENTICATED ? (
         <Link href="/login" className={styles.link}>
           Login
         </Link>
@@ -18,6 +25,28 @@ const AuthLinks = () => {
           </Link>
           <span className={styles.link}>Logout</span>
         </>
+      )}
+
+      <div className={styles.burger} onClick={() => setOpen(!open)}>
+        <div className={styles.line}></div>
+        <div className={styles.line}></div>
+        <div className={styles.line}></div>
+      </div>
+      {open && (
+        <div className={styles.responsiveMenu}>
+          <Link href="/">Homepage</Link>
+          <Link href="/">About</Link>
+          <Link href="/">Contact</Link>
+          {/* @ts-ignore */}
+          {status === AuthState.UNAUTHENTICATED ? (
+            <Link href="/login">Login</Link>
+          ) : (
+            <>
+              <Link href="/write">Write</Link>
+              <span className={styles.link}>Logout</span>
+            </>
+          )}
+        </div>
       )}
     </>
   );
