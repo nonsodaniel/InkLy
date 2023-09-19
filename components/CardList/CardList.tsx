@@ -12,7 +12,7 @@ const CardList = () => {
         <Card />
         <Card />
       </div>
-      <Pagination />
+      <Pagination page={4} hasPrev={true} hasNext />
     </div>
   );
 };

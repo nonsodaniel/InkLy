@@ -8,21 +8,23 @@ const CategoryList = async () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
-        {[1, 2, 3, 4, 5, 6]?.map((item) => (
-          <Link
-            href="/blog?cat=style"
-            className={`${styles.category} ${styles.style}`}
-          >
-            <Image
-              src={"/style.png"}
-              alt=""
-              width={32}
-              height={32}
-              className={styles.image}
-            />
-            Some style
-          </Link>
-        ))}
+        {["travel", "culture", "food", "fashion", "style", "Education"]?.map(
+          (item) => (
+            <Link
+              href="/blog?cat=style"
+              className={`${styles.category} ${styles.travel}`}
+            >
+              <Image
+                src={"/style.png"}
+                alt=""
+                width={32}
+                height={32}
+                className={styles.image}
+              />
+              Some style
+            </Link>
+          )
+        )}
       </div>
     </div>
   );

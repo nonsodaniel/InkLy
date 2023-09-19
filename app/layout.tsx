@@ -7,7 +7,7 @@ import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/providers/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Inkly",
+  title: "Inklyy",
   description: "A Blog application",
 };
 const inter = Inter({ subsets: ["latin"] });
